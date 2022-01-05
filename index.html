@@ -1,0 +1,28 @@
+<html>
+<head>
+<script type="text/javascript">
+    function getElementValue(id) {
+        return document.getElementById(id).value;
+    }
+
+    function setElementValue(id, value) {
+        return document.getElementById(id).value = value;
+    }
+
+    function convert(foo) {
+        const inputValue = getElementValue('inputText');
+        const replaceText = getElementValue('replaceText');
+        const replaceWith = getElementValue('replaceWith');
+        const newValue = inputValue.replaceAll(replaceText, replaceWith);
+        setElementValue('outputText', newValue);
+    }
+</script>
+</head>
+<body>
+<br/>Input text: <textarea id="inputText" rows="10" cols="50"></textarea>
+<br/>Replace text: <input type="text" id="replaceText" value=""></input>
+<br/>Replace with: <input type="text" id="replaceWith" value=""></input>
+<br/><input type="submit" value="Convert" onClick="convert(this)">
+<br />Output text: <textarea id="outputText" rows="10" cols="50"></textarea>
+</body>
+</html>
